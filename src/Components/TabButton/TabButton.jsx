@@ -1,4 +1,4 @@
-export default function TabButton({children, onSelect}) {
+export default function TabButton({children, isSelected, ...props}) {
   // vanila JS
   // document.querySelector('button').addEventListener('click', () => {blabla});
   // document.querySelector('button') -> button mi je vec ovde
@@ -7,10 +7,10 @@ export default function TabButton({children, onSelect}) {
   // DEFINISACU FUNCTION INSIDE FUNTION, ONO STO JE PRE REAKAO. FJA TU DEFINISANA IMA PRISTUP PROPS OBJEKTU I STATE.
   // clickHandler
 
-
+  console.log("Tabb component executin!");
   return (
     <li>
-        <button onClick={onSelect}>{children}</button>
+        <button className={isSelected ? "active" : undefined} {...props}>{children}</button>
     </li>
   )
 }
